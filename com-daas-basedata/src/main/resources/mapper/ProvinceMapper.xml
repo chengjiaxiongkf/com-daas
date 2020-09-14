@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.daas.basedata.mapper.ProvinceMapper">
+  <sql id="Province_Column_List" >
+    province_code provinceCode, province_name provinceName
+  </sql>
+  <sql id="Province_Where">
+    <where>
+      1=1
+      <if test="provinceCode!=null and provinceCode!=''">
+        and province_code = #{provinceCode,jdbcType=CHAR}
+      </if>
+      <if test="provinceName!=null and provinceName!=''">
+        and province_name like #{provinceName,jdbcType=VARCHAR} || '%'
+      </if>
+    </where>
+  </sql>
+  <select id="getProvinceByPageTotle" resultType="int" parameterType="com.daas.basedata.dto.Province">
+    select count(*)
+    from daas_base_province
+    <include refid="Province_Where"></include>
+  </select>
+  <select id="getProvinceByPage" resultType="com.daas.basedata.dto.Province" parameterType="com.daas.basedata.dto.Province">
+     SELECT province_code provinceCode,province_name provinceName FROM daas_base_province
+  </select>
+  <select id="selectByPrimaryKey" resultType="com.daas.basedata.dto.Province" parameterType="java.lang.String" >
+    select
+    <include refid="Province_Column_List" />
+    from daas_base_province
+    where province_code = #{provinceCode,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from daas_base_province
+    where province_code = #{provinceCode,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.daas.basedata.dto.Province" >
+    insert into daas_base_province (province_code, province_name)
+    values (#{provinceCode,jdbcType=CHAR}, #{provinceName,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.daas.basedata.dto.Province" >
+    update daas_base_province
+    set province_name = #{provinceName,jdbcType=VARCHAR}
+    where province_code = #{provinceCode,jdbcType=CHAR}
+  </update>
+</mapper>

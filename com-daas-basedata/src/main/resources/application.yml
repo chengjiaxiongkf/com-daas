@@ -1,0 +1,14 @@
+server:
+  port: 9999
+  servlet:
+    context-path: /basedata
+#spring应用名跟对外服务名
+spring:
+  profiles:
+    active: datasource
+#mybatis
+mybatis:
+  #如果Mapper接口跟xml放在一起,就不用指定xml的路径
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #数据操作语言的日志在控制台打印

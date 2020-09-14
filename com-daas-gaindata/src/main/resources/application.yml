@@ -1,0 +1,38 @@
+server:
+  port: 8888
+#spring应用名跟对外服务名
+spring:
+  #druid jdbc池
+  datasource:
+    druid:
+      username: root
+      password: 960827
+      url: jdbc:mysql://localhost:3306/base?useSSL=false&useUnicode=true&serverTimezone=GMT%2B8&zeroDateTimeBehavior=CONVERT_TO_NULL
+      initialSize: 20
+      minIdle: 5
+      maxActive: 100
+      maxWait: 100
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 30000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      useGlobalDataSourceStat: true
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+#mybatis
+mybatis:
+  #如果Mapper接口跟xml放在一起,就不用指定xml的路径
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #数据操作语言的日志在控制台打印
+dir:
+  json:
+    sub: json/sub/
+#http请求
+url:
+  bd:
+    sub: http://api.map.baidu.com/shangquan/forward/?qt=sub_area_list&ext=1&level=3&areacode=1&business_flag=0 #省/市/区
+    business: http://api.map.baidu.com/shangquan/forward/?qt=sub_area_list&ext=1&level=1&areacode=%s&business_flag=1 #某区下的商圈

@@ -9,19 +9,8 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>com-daas-basedata</module>
         <module>com-daas-common</module>
+        <module>com-daas-gaindata</module>
+        <module>com-daas-basedata</module>
     </modules>
-
-    <properties>
-        <lombok.version>1.18.0</lombok.version>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-        </dependency>
-    </dependencies>
 </project>

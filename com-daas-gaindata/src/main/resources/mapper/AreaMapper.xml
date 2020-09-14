@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.daas.gaindata.mapper.AreaMapper" >
+  <insert id="insert" parameterType="com.daas.gaindata.dto.AreaDto" >
+    insert into daas_base_area (area_code, area_name, city_code
+      )
+    values (#{areaCode,jdbcType=CHAR}, #{areaName,jdbcType=VARCHAR}, #{cityCode,jdbcType=CHAR}
+      )
+  </insert>
+</mapper>
