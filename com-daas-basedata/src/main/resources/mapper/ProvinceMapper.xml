@@ -21,7 +21,13 @@
     <include refid="Province_Where"></include>
   </select>
   <select id="getProvinceByPage" resultType="com.daas.basedata.dto.Province" parameterType="com.daas.basedata.dto.Province">
-     SELECT province_code provinceCode,province_name provinceName FROM daas_base_province
+    select 
+    <include refid="Province_Column_List"></include>
+    from daas_base_province
+    <include refid="Province_Where"></include>
+    <if test="startSize!=null and startSize!='' and endSize!=null and endSize!=''">
+     limit #{startSize},#{endSize}
+    </if>
   </select>
   <select id="selectByPrimaryKey" resultType="com.daas.basedata.dto.Province" parameterType="java.lang.String" >
     select

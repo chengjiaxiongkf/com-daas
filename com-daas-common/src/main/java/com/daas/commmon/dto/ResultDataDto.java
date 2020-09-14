@@ -7,7 +7,7 @@ package com.daas.commmon.dto;
 public class ResultDataDto<T> extends ResultDto {
     private int startSize = 0;
     private int endSize = 10;
-    private int totle;
+    private int totle = 0;
     private T data;
 
     public T get(){
@@ -27,7 +27,7 @@ public class ResultDataDto<T> extends ResultDto {
         this.endSize=endSize;
     }
     public void setTotle(int totle){
-        this.endSize=totle;
+        this.totle=totle;
     }
     public int getStartSize(){
        return this.startSize;

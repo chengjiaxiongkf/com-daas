@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="com-daas-basedata" />
+        <module name="com-daas-common" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="com-daas" target="1.5" />
+      <module name="com-daas-basedata" target="1.8" />
+      <module name="com-daas-basedata-common" target="1.5" />
+      <module name="com-daas-basedata-service" target="1.8.0_191" />
+      <module name="com-daas-common" target="1.5" />
+      <module name="com-daas-gaindata" target="1.8" />
+      <module name="com-daas-gaindata-common" target="1.5" />
+      <module name="com-daas-gaindata-common-service" target="1.5" />
+      <module name="com-daas-gaindata-service" target="1.8.0_191" />
+      <module name="como-daas-basedata" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
