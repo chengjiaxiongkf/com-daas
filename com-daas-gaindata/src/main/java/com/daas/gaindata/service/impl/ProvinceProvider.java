@@ -15,7 +15,7 @@ import java.util.List;
  */
 @Service
 @Slf4j
-public class ProvinceProvider extends HttpDataParent {
+public class ProvinceProvider extends AbstractHttpDataParent {
 
     private void dupCode(String key, JSONReader jsonReader){
         switch (key) {
@@ -34,6 +34,7 @@ public class ProvinceProvider extends HttpDataParent {
         }
     }
 
+    @Override
     public Object analysisData(JSONReader jsonReader){
         List<ProvinceDto> list = new ArrayList<>();
         try {
@@ -41,19 +42,19 @@ public class ProvinceProvider extends HttpDataParent {
             jsonReader.startObject();
             while (jsonReader.hasNext()){
                 String key = jsonReader.readString();
-                if(key.equals("backend_data")){
+                if("backend_data".equals(key)){
                     jsonReader.startObject();
                     while (jsonReader.hasNext()){
                         jsonReader.readString();
                         jsonReader.readObject();
                     }
                     jsonReader.endObject();
-                }else if(key.equals("content")){
+                }else if("content".equals(key)){
                     jsonReader.startObject();
                     while (jsonReader.hasNext()){
                         key = jsonReader.readString();
                         this.dupCode(key,jsonReader);
-                        if(key.equals("sub")){
+                        if("sub".equals(key)){
                             jsonReader.startArray();
                             while (jsonReader.hasNext()){
                                 provinceProvider = JSONObject.toJavaObject((JSONObject)jsonReader.readObject(), ProvinceDto.class);

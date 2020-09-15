@@ -1,6 +1,6 @@
 package com.daas.basedata.mapper;
 
-import com.daas.basedata.dto.Province;
+import com.daas.basedata.dto.ProvinceDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -8,19 +8,19 @@ import java.util.List;
 @Mapper
 public interface ProvinceMapper {
 
-    List<Province> getProvinceByPage(Province province) throws Exception;
+    List<ProvinceDTO> getProvinceByPage(ProvinceDTO provinceDTO) throws Exception;
 
-    int getProvinceByPageTotle(Province province) throws Exception;
+    int getProvinceByTotal(ProvinceDTO provinceDTO) throws Exception;
 
     int deleteByPrimaryKey(String provinceCode) throws Exception;
 
-    int insert(Province record) throws Exception;
+    int insert(ProvinceDTO record) throws Exception;
 
-    int insertSelective(Province record) throws Exception;
+    int insertSelective(ProvinceDTO record) throws Exception;
 
-    Province selectByPrimaryKey(String provinceCode) throws Exception;
+    ProvinceDTO selectByPrimaryKey(String provinceCode) throws Exception;
 
-    int updateByPrimaryKeySelective(Province record) throws Exception;
+    int updateByPrimaryKeySelective(ProvinceDTO record) throws Exception;
 
-    int updateByPrimaryKey(Province record) throws Exception;
+    int updateByPrimaryKey(ProvinceDTO record) throws Exception;
 }

@@ -1,19 +1,19 @@
 package com.daas.basedata.mapper;
 
-import com.daas.basedata.dto.Area;
+import com.daas.basedata.dto.AreaDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface AreaMapper {
     int deleteByPrimaryKey(String areaCode);
 
-    int insert(Area record);
+    int insert(AreaDTO record);
 
-    int insertSelective(Area record);
+    int insertSelective(AreaDTO record);
 
-    Area selectByPrimaryKey(String areaCode);
+    AreaDTO selectByPrimaryKey(String areaCode);
 
-    int updateByPrimaryKeySelective(Area record);
+    int updateByPrimaryKeySelective(AreaDTO record);
 
-    int updateByPrimaryKey(Area record);
+    int updateByPrimaryKey(AreaDTO record);
 }

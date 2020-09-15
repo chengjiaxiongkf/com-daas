@@ -11,25 +11,23 @@
         and province_code = #{provinceCode,jdbcType=CHAR}
       </if>
       <if test="provinceName!=null and provinceName!=''">
-        and province_name like #{provinceName,jdbcType=VARCHAR} || '%'
+        and province_name like concat(#{provinceName,jdbcType=VARCHAR},'%')
       </if>
     </where>
   </sql>
-  <select id="getProvinceByPageTotle" resultType="int" parameterType="com.daas.basedata.dto.Province">
+  <select id="getProvinceByTotal" resultType="int" parameterType="com.daas.basedata.dto.ProvinceDTO">
     select count(*)
     from daas_base_province
-    <include refid="Province_Where"></include>
+    <include refid="Province_Where"/>
   </select>
-  <select id="getProvinceByPage" resultType="com.daas.basedata.dto.Province" parameterType="com.daas.basedata.dto.Province">
+  <select id="getProvinceByPage" resultType="com.daas.basedata.dto.ProvinceDTO" parameterType="com.daas.basedata.dto.ProvinceDTO">
     select 
-    <include refid="Province_Column_List"></include>
+    <include refid="Province_Column_List"/>
     from daas_base_province
-    <include refid="Province_Where"></include>
-    <if test="startSize!=null and startSize!='' and endSize!=null and endSize!=''">
-     limit #{startSize},#{endSize}
-    </if>
+    <include refid="Province_Where"/>
+    limit #{startSize},#{endSize}
   </select>
-  <select id="selectByPrimaryKey" resultType="com.daas.basedata.dto.Province" parameterType="java.lang.String" >
+  <select id="selectByPrimaryKey" resultType="com.daas.basedata.dto.ProvinceDTO" parameterType="java.lang.String" >
     select
     <include refid="Province_Column_List" />
     from daas_base_province
@@ -39,11 +37,11 @@
     delete from daas_base_province
     where province_code = #{provinceCode,jdbcType=CHAR}
   </delete>
-  <insert id="insert" parameterType="com.daas.basedata.dto.Province" >
+  <insert id="insert" parameterType="com.daas.basedata.dto.ProvinceDTO" >
     insert into daas_base_province (province_code, province_name)
     values (#{provinceCode,jdbcType=CHAR}, #{provinceName,jdbcType=VARCHAR})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.daas.basedata.dto.Province" >
+  <update id="updateByPrimaryKey" parameterType="com.daas.basedata.dto.ProvinceDTO" >
     update daas_base_province
     set province_name = #{provinceName,jdbcType=VARCHAR}
     where province_code = #{provinceCode,jdbcType=CHAR}

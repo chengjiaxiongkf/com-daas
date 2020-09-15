@@ -1,6 +1,6 @@
 package com.daas.basedata.service.impl;
 
-import com.daas.basedata.dto.Area;
+import com.daas.basedata.dto.AreaDTO;
 import com.daas.basedata.service.AreaService;
 import org.springframework.stereotype.Service;
 
@@ -16,27 +16,27 @@ public class AreaServiceImpl implements AreaService {
     }
 
     @Override
-    public int insert(Area record) {
+    public int insert(AreaDTO record) {
         return 0;
     }
 
     @Override
-    public int insertSelective(Area record) {
+    public int insertSelective(AreaDTO record) {
         return 0;
     }
 
     @Override
-    public Area selectByPrimaryKey(String areaCode) {
+    public AreaDTO selectByPrimaryKey(String areaCode) {
         return null;
     }
 
     @Override
-    public int updateByPrimaryKeySelective(Area record) {
+    public int updateByPrimaryKeySelective(AreaDTO record) {
         return 0;
     }
 
     @Override
-    public int updateByPrimaryKey(Area record) {
+    public int updateByPrimaryKey(AreaDTO record) {
         return 0;
     }
 }

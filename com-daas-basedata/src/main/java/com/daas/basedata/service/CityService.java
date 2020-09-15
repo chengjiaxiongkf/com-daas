@@ -1,7 +1,6 @@
 package com.daas.basedata.service;
 
-import com.daas.basedata.dto.City;
-import org.apache.ibatis.annotations.Mapper;
+import com.daas.basedata.dto.CityDTO;
 
 public interface CityService {
     /**
@@ -14,29 +13,29 @@ public interface CityService {
      *
      * @ https://blog.csdn.net/caiqing116 2020-09-13
      */
-    int insert(City record);
+    int insert(CityDTO record);
 
     /**
      *
      * @ https://blog.csdn.net/caiqing116 2020-09-13
      */
-    int insertSelective(City record);
+    int insertSelective(CityDTO record);
 
     /**
      *
      * @ https://blog.csdn.net/caiqing116 2020-09-13
      */
-    City selectByPrimaryKey(String cityCode);
+    CityDTO selectByPrimaryKey(String cityCode);
 
     /**
      *
      * @ https://blog.csdn.net/caiqing116 2020-09-13
      */
-    int updateByPrimaryKeySelective(City record);
+    int updateByPrimaryKeySelective(CityDTO record);
 
     /**
      *
      * @ https://blog.csdn.net/caiqing116 2020-09-13
      */
-    int updateByPrimaryKey(City record);
+    int updateByPrimaryKey(CityDTO record);
 }

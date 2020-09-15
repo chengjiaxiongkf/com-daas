@@ -1,4 +1,4 @@
-package com.daas.basedata.dto;
+package com.daas.basedata.vo;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Getter;
@@ -6,21 +6,21 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BusinessDistrict {
+public class CityVO {
     /**
      * 
      */
     @JSONField(name="area_code")
-    private String businessDistrictCode;
+    private String cityCode;
 
     /**
      * 
      */
     @JSONField(name="area_name")
-    private String businessDistrictName;
+    private String cityName;
 
     /**
      * 
      */
-    private String areaCode;
+    private String provinceCode;
 }

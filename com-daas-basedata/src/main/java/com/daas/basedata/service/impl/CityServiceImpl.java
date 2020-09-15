@@ -1,6 +1,6 @@
 package com.daas.basedata.service.impl;
 
-import com.daas.basedata.dto.City;
+import com.daas.basedata.dto.CityDTO;
 import com.daas.basedata.service.CityService;
 import org.springframework.stereotype.Service;
 
@@ -16,27 +16,27 @@ public class CityServiceImpl implements CityService {
     }
 
     @Override
-    public int insert(City record) {
+    public int insert(CityDTO record) {
         return 0;
     }
 
     @Override
-    public int insertSelective(City record) {
+    public int insertSelective(CityDTO record) {
         return 0;
     }
 
     @Override
-    public City selectByPrimaryKey(String cityCode) {
+    public CityDTO selectByPrimaryKey(String cityCode) {
         return null;
     }
 
     @Override
-    public int updateByPrimaryKeySelective(City record) {
+    public int updateByPrimaryKeySelective(CityDTO record) {
         return 0;
     }
 
     @Override
-    public int updateByPrimaryKey(City record) {
+    public int updateByPrimaryKey(CityDTO record) {
         return 0;
     }
 }

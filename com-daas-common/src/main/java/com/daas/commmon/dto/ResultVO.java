@@ -11,20 +11,20 @@ import java.io.Serializable;
  */
 @Getter
 @Setter
-public class ResultDto implements Serializable {
+public class ResultVO implements Serializable {
     public static final String CODE_SUCCESS = "200";
     public static final String CODE_ERROR = "500";
 
     private String code;
     private String msg;
     private String errorMsg;
-    public ResultDto(){
-        this.code = ResultDto.CODE_SUCCESS;
+    public ResultVO(){
+        this.code = ResultVO.CODE_SUCCESS;
     }
-    public ResultDto(String msg){
+    public ResultVO(String msg){
         this.msg = msg;
     }
-    public ResultDto(String code,String msg){
+    public ResultVO(String code, String msg){
         this.code = code;
         this.msg = msg;
     }

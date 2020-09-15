@@ -1,27 +1,28 @@
 package com.daas.basedata.controller;
 
-import com.daas.basedata.dto.Province;
+import com.daas.basedata.service.ProvinceService;
 import com.daas.basedata.util.BaseServiceFactory;
-import com.daas.commmon.dto.ResultDataDto;
-import org.springframework.http.MediaType;
+import com.daas.basedata.vo.ProvinceVO;
+import com.daas.commmon.vo.ResultPageVO;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.awt.*;
-import java.util.List;
-
 @RestController
-@RequestMapping("provice")
+@RequestMapping("/province")
 public class ProvinceController {
+
     @RequestMapping(value = "/getProvinceByPage",method = RequestMethod.GET)
-    public ResultDataDto<List<Province>> getProvinceByPage(Province province) throws Exception {
-        ResultDataDto<List<Province>> resultDataDto = null;
+    public ResultPageVO getProvinceByPage(String startSize, String endSize, ProvinceVO provinceVO) throws Exception {
+        ResultPageVO resultPageVO = new ResultPageVO();
         try {
-            resultDataDto = BaseServiceFactory.newInstance().getProvinceService().getProvinceByPage(province);
+
+            ProvinceService provinceService = BaseServiceFactory.newInstance().getProvinceService();
+            resultPageVO.setData(provinceService.getProvinceByPage(startSize,endSize,provinceVO));
+            resultPageVO.setTotal(provinceService.getProvinceByTotal(provinceVO));
         } catch (Exception e) {
             throw new Exception("分页查询异常.");
         }
-        return resultDataDto;
+        return resultPageVO;
     }
 }

@@ -10,7 +10,6 @@ import com.daas.gaindata.dto.BusinessDistrictDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -23,7 +22,8 @@ import java.util.List;
  */
 @Service
 @Slf4j
-public class BusinessDistrictProvider extends HttpDataParent {
+public class BusinessDistrictProvider extends AbstractHttpDataParent {
+    @Override
     public String filterDate(String str){
         JSONObject jsonObject;
         try {
@@ -47,9 +47,10 @@ public class BusinessDistrictProvider extends HttpDataParent {
                 while (jsonReader.hasNext()){
                     String key = jsonReader.readString();
                     String str = this.dupCode(key,jsonReader);
-                    if(StringUtils.isEmpty(upCode))
+                    if(StringUtils.isEmpty(upCode)) {
                         upCode = str;
-                    if(key.equals("sub")){
+                    }
+                    if("sub".equals(key)){
                         jsonReader.startArray();
                         while (jsonReader.hasNext()){
                             businessDistrictPojo = JSONObject.toJavaObject((JSONObject)jsonReader.readObject(), BusinessDistrictDto.class);
@@ -73,28 +74,16 @@ public class BusinessDistrictProvider extends HttpDataParent {
 
     private String dupCode(String key,JSONReader jsonReader){
         String upCode = "";
-        switch (key) {
-            case "area_code":
-                upCode = jsonReader.readObject().toString();
-                break;
-            case "area_name":
-                jsonReader.readObject();
-                break;
-            case "area_type":
-                jsonReader.readObject();
-                break;
-            case "geo":
-                jsonReader.readObject();
-                break;
-            case "sup_business_area":
-                jsonReader.readObject();
-                break;
+        if ("area_code".equals(key)) {
+            upCode = jsonReader.readObject().toString();
+        } else {
+            jsonReader.readObject();
         }
         return upCode;
     }
 
     public void writeWithoutHead() throws IOException {
-        try (OutputStream out = new FileOutputStream("withHead.xlsx");) {
+        try (OutputStream out = new FileOutputStream("withHead.xlsx")) {
             ExcelWriter writer = new ExcelWriter(out, ExcelTypeEnum.XLSX);
             Sheet sheet1 = new Sheet(1, 0);
             sheet1.setSheetName("sheet1");
@@ -106,10 +95,10 @@ public class BusinessDistrictProvider extends HttpDataParent {
                 item.add("item2" + i);
                 data.add(item);
             }
-            List<List<String>> head = new ArrayList<List<String>>();
-            List<String> headCoulumn1 = new ArrayList<String>();
-            List<String> headCoulumn2 = new ArrayList<String>();
-            List<String> headCoulumn3 = new ArrayList<String>();
+            List<List<String>> head = new ArrayList<>();
+            List<String> headCoulumn1 = new ArrayList<>();
+            List<String> headCoulumn2 = new ArrayList<>();
+            List<String> headCoulumn3 = new ArrayList<>();
             headCoulumn1.add("区");
             headCoulumn2.add("商圈编码");
             headCoulumn3.add("商圈名称");

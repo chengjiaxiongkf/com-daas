@@ -1,6 +1,6 @@
 package com.daas.basedata.mapper;
 
-import com.daas.basedata.dto.BusinessDistrict;
+import com.daas.basedata.dto.BusinessDistrictDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
@@ -15,29 +15,29 @@ public interface BusinessDistrictMapper {
      *
      * @ https://blog.csdn.net/caiqing116 2020-09-13
      */
-    int insert(BusinessDistrict record);
+    int insert(BusinessDistrictDTO record);
 
     /**
      *
      * @ https://blog.csdn.net/caiqing116 2020-09-13
      */
-    int insertSelective(BusinessDistrict record);
+    int insertSelective(BusinessDistrictDTO record);
 
     /**
      *
      * @ https://blog.csdn.net/caiqing116 2020-09-13
      */
-    BusinessDistrict selectByPrimaryKey(String businessDistrictCode);
+    BusinessDistrictDTO selectByPrimaryKey(String businessDistrictCode);
 
     /**
      *
      * @ https://blog.csdn.net/caiqing116 2020-09-13
      */
-    int updateByPrimaryKeySelective(BusinessDistrict record);
+    int updateByPrimaryKeySelective(BusinessDistrictDTO record);
 
     /**
      *
      * @ https://blog.csdn.net/caiqing116 2020-09-13
      */
-    int updateByPrimaryKey(BusinessDistrict record);
+    int updateByPrimaryKey(BusinessDistrictDTO record);
 }

@@ -1,6 +1,6 @@
 package com.daas.basedata.service.impl;
 
-import com.daas.basedata.dto.BusinessDistrict;
+import com.daas.basedata.dto.BusinessDistrictDTO;
 import com.daas.basedata.service.BusinessDistrictService;
 import org.springframework.stereotype.Service;
 
@@ -16,27 +16,27 @@ public class BusinessDistrictServiceImpl implements BusinessDistrictService {
     }
 
     @Override
-    public int insert(BusinessDistrict record) {
+    public int insert(BusinessDistrictDTO record) {
         return 0;
     }
 
     @Override
-    public int insertSelective(BusinessDistrict record) {
+    public int insertSelective(BusinessDistrictDTO record) {
         return 0;
     }
 
     @Override
-    public BusinessDistrict selectByPrimaryKey(String businessDistrictCode) {
+    public BusinessDistrictDTO selectByPrimaryKey(String businessDistrictCode) {
         return null;
     }
 
     @Override
-    public int updateByPrimaryKeySelective(BusinessDistrict record) {
+    public int updateByPrimaryKeySelective(BusinessDistrictDTO record) {
         return 0;
     }
 
     @Override
-    public int updateByPrimaryKey(BusinessDistrict record) {
+    public int updateByPrimaryKey(BusinessDistrictDTO record) {
         return 0;
     }
 }

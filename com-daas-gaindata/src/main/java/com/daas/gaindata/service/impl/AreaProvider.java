@@ -15,22 +15,13 @@ import java.util.List;
  */
 @Service
 @Slf4j
-public class AreaProvider extends HttpDataParent {
+public class AreaProvider extends AbstractHttpDataParent {
     private String dupCode(String key,JSONReader jsonReader){
         String upCode = "";
-        switch (key) {
-            case "area_code":
-                upCode = jsonReader.readObject().toString();
-                break;
-            case "area_name":
-                jsonReader.readObject();
-                break;
-            case "area_type":
-                jsonReader.readObject();
-                break;
-            case "geo":
-                jsonReader.readObject();
-                break;
+        if ("area_code".equals(key)) {
+            upCode = jsonReader.readObject().toString();
+        } else {
+            jsonReader.readObject();
         }
         return upCode;
     }
@@ -43,26 +34,26 @@ public class AreaProvider extends HttpDataParent {
             jsonReader.startObject();
             while (jsonReader.hasNext()){
                 String key = jsonReader.readString();
-                if(key.equals("backend_data")){
+                if("backend_data".equals(key)){
                     jsonReader.startObject();
                     while (jsonReader.hasNext()){
                         jsonReader.readString();
                         jsonReader.readObject();
                     }
                     jsonReader.endObject();
-                }else if(key.equals("content")){
+                }else if("content".equals(key)){
                     jsonReader.startObject();
                     while (jsonReader.hasNext()){
                         key = jsonReader.readString();
                         this.dupCode(key,jsonReader);
-                        if(key.equals("sub")){
+                        if("sub".equals(key)){
                             jsonReader.startArray();
                             while (jsonReader.hasNext()){
                                 jsonReader.startObject();
                                 while (jsonReader.hasNext()){
                                     key = jsonReader.readString();
                                     this.dupCode(key,jsonReader);
-                                    if(key.equals("sub")){
+                                    if("sub".equals(key)){
                                         jsonReader.startArray();
                                         while (jsonReader.hasNext()){
                                             String upCode = null;
@@ -70,9 +61,10 @@ public class AreaProvider extends HttpDataParent {
                                             while (jsonReader.hasNext()){
                                                 key = jsonReader.readString();
                                                 String str = this.dupCode(key,jsonReader);
-                                                if(StringUtils.isEmpty(upCode))
+                                                if(StringUtils.isEmpty(upCode)){
                                                     upCode = str;
-                                                if(key.equals("sub")){
+                                                }
+                                                if("sub".equals(key)){
                                                     jsonReader.startArray();
                                                     while (jsonReader.hasNext()){
                                                         areaDto = JSONObject.toJavaObject((JSONObject)jsonReader.readObject(), AreaDto.class);
