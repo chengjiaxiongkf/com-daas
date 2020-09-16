@@ -1,6 +1,5 @@
 package com.daas.commmon.vo;
 
-import com.daas.commmon.dto.ResultVO;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,12 +1,10 @@
 package com.daas.basedata.service.impl;
 
-import com.alibaba.fastjson.JSONObject;
-import com.daas.basedata.dto.ProvinceDTO;
 import com.daas.basedata.mapper.ProvinceMapper;
 import com.daas.basedata.service.ProvinceService;
 import com.daas.basedata.vo.ProvinceVO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -16,17 +14,16 @@ import java.util.List;
 @Service
 public class ProvinceServiceImpl implements ProvinceService {
 
-    @Autowired
+    @Resource
     private ProvinceMapper provinceMapper;
 
     @Override
-    public List<ProvinceVO> getProvinceByPage(String startSize, String endSize, ProvinceVO provinceVO) throws Exception {
-        ProvinceDTO provinceDTO = JSONObject.parseObject(JSONObject.toJSONString(provinceVO), ProvinceDTO.class);
-        return JSONObject.parseArray(JSONObject.toJSONString(provinceMapper.getProvinceByPage(provinceDTO)), ProvinceVO.class);
+    public List<ProvinceVO> getProvinceByPage(ProvinceVO provinceVO) throws Exception {
+        return provinceMapper.getProvinceByPage(provinceVO);
     }
 
     @Override
-    public int getProvinceByTotal(ProvinceVO provinceVO) throws Exception {
-        return provinceMapper.getProvinceByTotal(JSONObject.parseObject(JSONObject.toJSONString(provinceVO), ProvinceDTO.class));
+    public int getProvinceTotal(ProvinceVO provinceVO) throws Exception {
+        return provinceMapper.getProvinceTotal(provinceVO);
     }
 }

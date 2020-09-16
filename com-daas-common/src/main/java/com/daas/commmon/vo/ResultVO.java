@@ -1,4 +1,4 @@
-package com.daas.commmon.dto;
+package com.daas.commmon.vo;
 
 import lombok.Getter;
 import lombok.Setter;

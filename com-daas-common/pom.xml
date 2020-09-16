@@ -25,4 +25,24 @@
             <version>1.18.0</version>
         </dependency>
     </dependencies>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <encode.version>UTF-8</encode.version>
+    </properties>
+    <build>
+        <!-- 给maven配置Java版本 -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${encode.version}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

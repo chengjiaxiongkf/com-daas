@@ -1,7 +1,7 @@
 package com.daas.gaindata.service.impl;
 
 import com.alibaba.fastjson.JSONReader;
-import com.daas.commmon.dto.ResultVO;
+import com.daas.commmon.vo.ResultVO;
 import com.daas.gaindata.service.HttpDataHandle;
 import com.daas.gaindata.util.FileUtils;
 import com.daas.gaindata.util.HttpRequestUtils;
