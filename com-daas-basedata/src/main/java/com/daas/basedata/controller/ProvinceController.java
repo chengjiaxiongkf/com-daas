@@ -16,7 +16,45 @@ public class ProvinceController {
     public ResultPageVO getProvinceByPage(ProvinceVO provinceVO) throws Exception {
         ResultPageVO resultPageVO = new ResultPageVO();
         try {
+            ProvinceService provinceService = BaseServiceFactory.newInstance().getProvinceService();
+            resultPageVO.setData(provinceService.getProvinceByPage(provinceVO));
+            resultPageVO.setTotal(provinceService.getProvinceTotal(provinceVO));
+        } catch (Exception e) {
+            throw new Exception("分页查询异常.");
+        }
+        return resultPageVO;
+    }
 
+    @RequestMapping(value = "/insertProvince",method = RequestMethod.POST)
+    public ResultPageVO insertProvince(ProvinceVO provinceVO) throws Exception {
+        ResultPageVO resultPageVO = new ResultPageVO();
+        try {
+            ProvinceService provinceService = BaseServiceFactory.newInstance().getProvinceService();
+            resultPageVO.setData(provinceService.getProvinceByPage(provinceVO));
+            resultPageVO.setTotal(provinceService.getProvinceTotal(provinceVO));
+        } catch (Exception e) {
+            throw new Exception("分页查询异常.");
+        }
+        return resultPageVO;
+    }
+
+    @RequestMapping(value = "/updateProvince",method = RequestMethod.GET)
+    public ResultPageVO updateProvince(ProvinceVO provinceVO) throws Exception {
+        ResultPageVO resultPageVO = new ResultPageVO();
+        try {
+            ProvinceService provinceService = BaseServiceFactory.newInstance().getProvinceService();
+            resultPageVO.setData(provinceService.getProvinceByPage(provinceVO));
+            resultPageVO.setTotal(provinceService.getProvinceTotal(provinceVO));
+        } catch (Exception e) {
+            throw new Exception("分页查询异常.");
+        }
+        return resultPageVO;
+    }
+
+    @RequestMapping(value = "/deleteProvince",method = RequestMethod.GET)
+    public ResultPageVO deleteProvince(ProvinceVO provinceVO) throws Exception {
+        ResultPageVO resultPageVO = new ResultPageVO();
+        try {
             ProvinceService provinceService = BaseServiceFactory.newInstance().getProvinceService();
             resultPageVO.setData(provinceService.getProvinceByPage(provinceVO));
             resultPageVO.setTotal(provinceService.getProvinceTotal(provinceVO));

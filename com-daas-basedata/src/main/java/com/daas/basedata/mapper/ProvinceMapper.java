@@ -12,13 +12,11 @@ public interface ProvinceMapper {
 
     int getProvinceTotal(ProvinceVO provinceVO) throws Exception;
 
-    int insert(ProvinceDTO record) throws Exception;
+    int insertProvince(ProvinceDTO record) throws Exception;
 
-    int updateActiveById(String id) throws Exception;
+    int updateProvince(String id) throws Exception;
 
-    int updateByPrimaryKey(ProvinceDTO record) throws Exception;
+    int deleteProvince(ProvinceDTO record) throws Exception;
 
-    ProvinceDTO selectByPrimaryKey(String provinceCode) throws Exception;
-
-
+    ProvinceDTO getProvinceById(String provinceCode) throws Exception;
 }

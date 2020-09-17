@@ -26,4 +26,19 @@ public class ProvinceServiceImpl implements ProvinceService {
     public int getProvinceTotal(ProvinceVO provinceVO) throws Exception {
         return provinceMapper.getProvinceTotal(provinceVO);
     }
+
+    @Override
+    public int insertProvince(ProvinceVO provinceVO) throws Exception {
+        return 0;
+    }
+
+    @Override
+    public int updateProvince(ProvinceVO provinceVO) throws Exception {
+        return 0;
+    }
+
+    @Override
+    public int deleteProvince(ProvinceVO provinceVO) throws Exception {
+        return 0;
+    }
 }
