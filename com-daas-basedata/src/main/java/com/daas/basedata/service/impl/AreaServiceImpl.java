@@ -33,7 +33,7 @@ public class AreaServiceImpl implements AreaService {
 
     @Override
     public AreaVO getAreaById(String id) {
-        return (AreaVO)BeanMapper.convert(areaMapper.selectById(id),AreaVO.class);
+        return BeanMapper.convert(areaMapper.selectById(id),AreaVO.class);
     }
 
     @Override

@@ -34,7 +34,7 @@ public class BusinessDistrictServiceImpl implements BusinessDistrictService {
 
     @Override
     public BusinessDistrictVO getBusinessDistrictById(String id) {
-        return (BusinessDistrictVO)BeanMapper.convert(businessDistrictMapper.selectById(id),BusinessDistrictVO.class);
+        return BeanMapper.convert(businessDistrictMapper.selectById(id),BusinessDistrictVO.class);
     }
 
     @Override

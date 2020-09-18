@@ -1,11 +1,10 @@
 package com.daas.basedata.service.impl;
 
-import com.alibaba.fastjson.JSONObject;
+import com.daas.basedata.constant.BeanMapper;
 import com.daas.basedata.dto.ProvinceDTO;
 import com.daas.basedata.mapper.ProvinceMapper;
 import com.daas.basedata.service.ProvinceService;
 import com.daas.basedata.vo.ProvinceVO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -34,7 +33,7 @@ public class ProvinceServiceImpl implements ProvinceService {
 
     @Override
     public ProvinceVO getProvinceById(String id) throws Exception {
-        return JSONObject.parseObject(JSONObject.toJSON(provinceMapper.getProvinceById(id)).toString(),ProvinceVO.class);
+        return BeanMapper.convert(provinceMapper.getProvinceById(id),ProvinceVO.class);
     }
 
     @Override
@@ -42,7 +41,7 @@ public class ProvinceServiceImpl implements ProvinceService {
         if(StringUtils.isEmpty(provinceVO.getProvinceCode()) || StringUtils.isEmpty(provinceVO.getProvinceName())){
             throw new RuntimeException("省编码或者省名称为空");
         }
-        return provinceMapper.insertProvince(JSONObject.parseObject(JSONObject.toJSON(provinceVO).toString(), ProvinceDTO.class));
+        return provinceMapper.insertProvince(BeanMapper.convert(provinceVO, ProvinceDTO.class));
     }
 
     @Override
@@ -50,7 +49,7 @@ public class ProvinceServiceImpl implements ProvinceService {
         if(StringUtils.isEmpty(provinceVO.getProvinceCode()) && StringUtils.isEmpty(provinceVO.getProvinceName())){
             throw new RuntimeException("省编码跟省名称不能都为空");
         }
-        return provinceMapper.updateProvinceById(JSONObject.parseObject(JSONObject.toJSON(provinceVO).toString(), ProvinceDTO.class));
+        return provinceMapper.updateProvinceById(BeanMapper.convert(provinceVO, ProvinceDTO.class));
     }
 
     @Override

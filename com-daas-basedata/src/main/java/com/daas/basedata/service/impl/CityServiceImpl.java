@@ -29,7 +29,7 @@ public class CityServiceImpl implements CityService {
 
     @Override
     public CityVO getCityById(String id)  {
-        return (CityVO)BeanMapper.convert(cityMapper.selectById(id),CityVO.class);
+        return BeanMapper.convert(cityMapper.selectById(id),CityVO.class);
     }
 
     @Override
