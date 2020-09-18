@@ -1,41 +1,16 @@
 package com.daas.basedata.service;
 
-import com.daas.basedata.dto.CityDTO;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.daas.basedata.vo.CityVO;
 
 public interface CityService {
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    int deleteByPrimaryKey(String cityCode);
+    Page getCityByPage(Page page,CityVO CityVO) throws Exception;
 
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    int insert(CityDTO record);
+    CityVO getCityById(String id) throws Exception;
 
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    int insertSelective(CityDTO record);
+    int insertCity(CityVO CityVO) throws Exception;
 
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    CityDTO selectByPrimaryKey(String cityCode);
+    int updateCityById(CityVO CityVO) throws Exception;
 
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    int updateByPrimaryKeySelective(CityDTO record);
-
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    int updateByPrimaryKey(CityDTO record);
+    int deleteCityById(String id) throws Exception;
 }

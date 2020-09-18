@@ -15,36 +15,48 @@
       </if>
     </where>
   </sql>
-  <select id="getProvinceTotal" resultType="int" parameterType="com.daas.basedata.dto.ProvinceVO">
+
+  <select id="getProvinceTotal" resultType="java.lang.Long" parameterType="com.daas.basedata.vo.ProvinceVO">
     select count(*)
     from daas_base_province
     <include refid="Province_Where"/>
   </select>
-  <select id="getProvinceByPage" resultType="com.daas.basedata.dto.ProvinceVO" parameterType="com.daas.basedata.dto.ProvinceVO">
-    select 
+
+  <select id="getProvinceByPage" resultType="com.daas.basedata.vo.ProvinceVO" parameterType="com.daas.basedata.vo.ProvinceVO">
+    select
     <include refid="Province_Column_List"/>
     from daas_base_province
     <include refid="Province_Where"/>
     limit #{startSize},#{endSize}
   </select>
 
-  <select id="selectByPrimaryKey" resultType="com.daas.basedata.dto.ProvinceVO" parameterType="java.lang.String" >
+  <select id="getProvinceById" resultType="com.daas.basedata.dto.ProvinceDTO" parameterType="java.lang.Integer" >
     select
-    <include refid="Province_Column_List" />
+    <include refid="Province_Column_List"/>
     from daas_base_province
-    where province_code = #{provinceCode,jdbcType=CHAR}
+   where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from daas_base_province
-    where province_code = #{provinceCode,jdbcType=CHAR}
-  </delete>
-  <insert id="insert" parameterType="com.daas.basedata.dto.ProvinceVO" >
+
+  <insert id="insertProvince" parameterType="com.daas.basedata.dto.ProvinceDTO" >
     insert into daas_base_province (province_code, province_name)
     values (#{provinceCode,jdbcType=CHAR}, #{provinceName,jdbcType=VARCHAR})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.daas.basedata.dto.ProvinceVO" >
+
+  <update id="updateProvinceById" parameterType="com.daas.basedata.dto.ProvinceDTO" >
     update daas_base_province
-    set province_name = #{provinceName,jdbcType=VARCHAR}
-    where province_code = #{provinceCode,jdbcType=CHAR}
+    <set>
+        <if test="provinceName!=null and provinceName!=''">
+          province_name = #{provinceName,jdbcType=VARCHAR}
+        </if>
+      <if test="provinceCode!=null and provinceCode!=''">
+        province_code = #{provinceCode,jdbcType=VARCHAR}
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <delete id="deleteProvinceById" parameterType="java.lang.String" >
+    delete from daas_base_province
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
 </mapper>

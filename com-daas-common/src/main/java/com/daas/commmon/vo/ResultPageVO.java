@@ -2,6 +2,7 @@ package com.daas.commmon.vo;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 
 /**
  * @Author chengjiaxiong
@@ -9,10 +10,11 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class ResultPageVO extends ResultVO {
+@Accessors(chain = true)
+public class ResultPageVO<T> extends ResultVO<T> {
     public ResultPageVO(){
         super();
     }
-    private int total;
-    private Object data;
+    private long total;
+    private T data;
 }

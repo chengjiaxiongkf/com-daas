@@ -1,41 +1,16 @@
 package com.daas.basedata.service;
 
-import com.daas.basedata.dto.AreaDTO;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.daas.basedata.vo.AreaVO;
 
 public interface AreaService {
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    int deleteByPrimaryKey(String areaCode);
+    Page getAreaByPage(Page page,AreaVO AreaVO) throws Exception;
 
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    int insert(AreaDTO record);
+    AreaVO getAreaById(String id) throws Exception;
 
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    int insertSelective(AreaDTO record);
+    int insertArea(AreaVO AreaVO) throws Exception;
 
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    AreaDTO selectByPrimaryKey(String areaCode);
+    int updateAreaById(AreaVO AreaVO) throws Exception;
 
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    int updateByPrimaryKeySelective(AreaDTO record);
-
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    int updateByPrimaryKey(AreaDTO record);
+    int deleteAreaById(String id) throws Exception;
 }

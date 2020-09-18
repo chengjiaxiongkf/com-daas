@@ -1,41 +1,16 @@
 package com.daas.basedata.service;
 
-import com.daas.basedata.dto.BusinessDistrictDTO;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.daas.basedata.vo.BusinessDistrictVO;
 
 public interface BusinessDistrictService {
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    int deleteByPrimaryKey(String businessDistrictCode);
+    Page getBusinessDistrictByPage(Page page,BusinessDistrictVO BusinessDistrictVO) throws Exception;
 
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    int insert(BusinessDistrictDTO record);
+    BusinessDistrictVO getBusinessDistrictById(String id) throws Exception;
 
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    int insertSelective(BusinessDistrictDTO record);
+    int insertBusinessDistrict(BusinessDistrictVO BusinessDistrictVO) throws Exception;
 
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    BusinessDistrictDTO selectByPrimaryKey(String businessDistrictCode);
+    int updateBusinessDistrictById(BusinessDistrictVO BusinessDistrictVO) throws Exception;
 
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    int updateByPrimaryKeySelective(BusinessDistrictDTO record);
-
-    /**
-     *
-     * @ https://blog.csdn.net/caiqing116 2020-09-13
-     */
-    int updateByPrimaryKey(BusinessDistrictDTO record);
+    int deleteBusinessDistrictById(String id) throws Exception;
 }
