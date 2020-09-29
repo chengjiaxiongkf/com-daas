@@ -15,12 +15,12 @@
       </if>
     </where>
   </sql>
-  <select id="getProvinceTotal" resultType="int" parameterType="com.daas.basedata.dto.ProvinceVO">
+  <select id="getProvinceTotal" resultType="int" parameterType="com.daas.basedata.vo.ProvinceVO">
     select count(*)
     from daas_base_province
     <include refid="Province_Where"/>
   </select>
-  <select id="getProvinceByPage" resultType="com.daas.basedata.dto.ProvinceVO" parameterType="com.daas.basedata.dto.ProvinceVO">
+  <select id="getProvinceByPage" resultType="com.daas.basedata.vo.ProvinceVO" parameterType="com.daas.basedata.vo.ProvinceVO">
     select 
     <include refid="Province_Column_List"/>
     from daas_base_province
@@ -28,7 +28,7 @@
     limit #{startSize},#{endSize}
   </select>
 
-  <select id="selectByPrimaryKey" resultType="com.daas.basedata.dto.ProvinceVO" parameterType="java.lang.String" >
+  <select id="selectByPrimaryKey" resultType="com.daas.basedata.vo.ProvinceVO" parameterType="java.lang.String" >
     select
     <include refid="Province_Column_List" />
     from daas_base_province
@@ -38,11 +38,11 @@
     delete from daas_base_province
     where province_code = #{provinceCode,jdbcType=CHAR}
   </delete>
-  <insert id="insert" parameterType="com.daas.basedata.dto.ProvinceVO" >
+  <insert id="insert" parameterType="com.daas.basedata.vo.ProvinceVO" >
     insert into daas_base_province (province_code, province_name)
     values (#{provinceCode,jdbcType=CHAR}, #{provinceName,jdbcType=VARCHAR})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.daas.basedata.dto.ProvinceVO" >
+  <update id="updateByPrimaryKey" parameterType="com.daas.basedata.vo.ProvinceVO" >
     update daas_base_province
     set province_name = #{provinceName,jdbcType=VARCHAR}
     where province_code = #{provinceCode,jdbcType=CHAR}
