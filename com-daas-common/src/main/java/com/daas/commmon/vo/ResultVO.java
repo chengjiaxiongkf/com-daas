@@ -2,6 +2,7 @@ package com.daas.commmon.vo;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
@@ -11,13 +12,15 @@ import java.io.Serializable;
  */
 @Getter
 @Setter
-public class ResultVO implements Serializable {
+@Accessors(chain = true)
+public class ResultVO<T> implements Serializable {
     public static final String CODE_SUCCESS = "200";
     public static final String CODE_ERROR = "500";
 
     private String code;
     private String msg;
     private String errorMsg;
+    private T data;
     public ResultVO(){
         this.code = ResultVO.CODE_SUCCESS;
     }

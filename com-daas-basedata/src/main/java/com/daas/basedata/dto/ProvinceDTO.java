@@ -1,5 +1,6 @@
 package com.daas.basedata.dto;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.daas.commmon.dto.BaseDTO;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,6 +12,7 @@ import lombok.Setter;
  **/
 @Getter
 @Setter
+@TableName("daas_base_province")
 public class ProvinceDTO extends BaseDTO {
     private String provinceCode;
     private String provinceName;

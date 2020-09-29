@@ -1,8 +1,13 @@
 package com.daas.basedata.service.impl;
 
-import com.daas.basedata.dto.CityDTO;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.daas.basedata.constant.BeanMapper;
+import com.daas.basedata.mapper.CityMapper;
 import com.daas.basedata.service.CityService;
+import com.daas.basedata.vo.CityVO;
 import org.springframework.stereotype.Service;
+import javax.annotation.Resource;
 
 /**
  * @Author chengjiaxiong
@@ -10,33 +15,35 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class CityServiceImpl implements CityService {
+
+    @Resource
+    private CityMapper cityMapper;
+
     @Override
-    public int deleteByPrimaryKey(String cityCode) {
-        return 0;
+    public Page getCityByPage(Page page,CityVO cityVO)  {
+        QueryWrapper queryWrapper =  new QueryWrapper();
+        queryWrapper.eq("city_code",cityVO.getCityCode());
+        queryWrapper.likeRight("city_name",cityVO.getCityName());
+        return cityMapper.selectPage(page,queryWrapper);
     }
 
     @Override
-    public int insert(CityDTO record) {
-        return 0;
+    public CityVO getCityById(String id)  {
+        return BeanMapper.convert(cityMapper.selectById(id),CityVO.class);
     }
 
     @Override
-    public int insertSelective(CityDTO record) {
-        return 0;
+    public int insertCity(CityVO cityVO)  {
+        return cityMapper.insert(cityVO);
     }
 
     @Override
-    public CityDTO selectByPrimaryKey(String cityCode) {
-        return null;
+    public int updateCityById(CityVO cityVO)  {
+        return cityMapper.updateById(cityVO);
     }
 
     @Override
-    public int updateByPrimaryKeySelective(CityDTO record) {
-        return 0;
-    }
-
-    @Override
-    public int updateByPrimaryKey(CityDTO record) {
-        return 0;
+    public int deleteCityById(String id)  {
+        return cityMapper.deleteById(id);
     }
 }

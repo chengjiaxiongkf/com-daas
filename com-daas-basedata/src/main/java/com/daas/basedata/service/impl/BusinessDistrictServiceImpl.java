@@ -1,8 +1,18 @@
 package com.daas.basedata.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.daas.basedata.constant.BeanMapper;
 import com.daas.basedata.dto.BusinessDistrictDTO;
+import com.daas.basedata.mapper.BusinessDistrictMapper;
 import com.daas.basedata.service.BusinessDistrictService;
+import com.daas.basedata.vo.BusinessDistrictVO;
+import org.junit.Test;
+import org.springframework.cglib.beans.BeanMap;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Author chengjiaxiong
@@ -10,33 +20,35 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class BusinessDistrictServiceImpl implements BusinessDistrictService {
+
+    @Resource
+    private BusinessDistrictMapper businessDistrictMapper;
+
     @Override
-    public int deleteByPrimaryKey(String businessDistrictCode) {
-        return 0;
+    public Page getBusinessDistrictByPage(Page page,BusinessDistrictVO businessDistrictVO) {
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.eq("businessDistrictCode",businessDistrictVO.getBusinessDistrictCode());
+        queryWrapper.likeRight("businessDistrictName",businessDistrictVO.getBusinessDistrictName());
+        return businessDistrictMapper.selectPage(page,queryWrapper);
     }
 
     @Override
-    public int insert(BusinessDistrictDTO record) {
-        return 0;
+    public BusinessDistrictVO getBusinessDistrictById(String id) {
+        return BeanMapper.convert(businessDistrictMapper.selectById(id),BusinessDistrictVO.class);
     }
 
     @Override
-    public int insertSelective(BusinessDistrictDTO record) {
-        return 0;
+    public int insertBusinessDistrict(BusinessDistrictVO businessDistrictVO) {
+        return businessDistrictMapper.insert(businessDistrictVO);
     }
 
     @Override
-    public BusinessDistrictDTO selectByPrimaryKey(String businessDistrictCode) {
-        return null;
+    public int updateBusinessDistrictById(BusinessDistrictVO businessDistrictVO) {
+        return businessDistrictMapper.updateById(businessDistrictVO);
     }
 
     @Override
-    public int updateByPrimaryKeySelective(BusinessDistrictDTO record) {
-        return 0;
-    }
-
-    @Override
-    public int updateByPrimaryKey(BusinessDistrictDTO record) {
-        return 0;
+    public int deleteBusinessDistrictById(String id) {
+        return businessDistrictMapper.deleteById(id);
     }
 }
