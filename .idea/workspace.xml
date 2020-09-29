@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3681105d-075a-47bd-ab42-8275a3eff83f" name="Default Changelist" comment="省市区商圈基础数据初始化">
+      <change beforePath="$PROJECT_DIR$/com-daas-basedata/src/main/resources/mapper/ProvinceMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/com-daas-basedata/src/main/resources/mapper/ProvinceMapper.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Enum" />
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="mapper xml" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\work\language_java\apache-maven-3.6.3\jar" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\work\language_java\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1hENabW5XmVQBJgNiOAU8gDFPil" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="database.data.extractors.current.id" value="SQL Inserts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/com-daas-basedata/src/main/sql" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.HTML" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.daas.basedata" />
+      <recent name="com.daas.basedata.dto" />
+      <recent name="com.daas.basedata.service" />
+      <recent name="com.daas.gaindata" />
+      <recent name="com.daas.basedata.common" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\language_java\work_java\com-daas\com-daas-basedata\src\main\sql" />
+      <recent name="D:\work\language_java\work_java\com-daas\com-daas-common\src\main\java\com\daas\commmon" />
+      <recent name="D:\work\language_java\work_java\com-daas\com-daas-basedata\src\main\java\com\daas\basedata\vo" />
+      <recent name="D:\work\language_java\work_java\com-daas\com-daas-basedata\src\main\resources" />
+      <recent name="D:\work\language_java\work_java\com-daas\com-daas-gaindata\target\classes" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.daas.basedata.constant" />
+      <recent name="com.daas.basedata.service" />
+      <recent name="com.daas.gaindata.service.impl" />
+      <recent name="com.daas.gaindata.common.util" />
+      <recent name="com.daas.gaindata.service.service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\work\language_java\work_java\com-daas\com-daas-gaindata\target\classes" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean --builder" />
+      <command value="mvn clean compile" />
+      <command value="mvn compile" />
+      <command value="mvn clean" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="JUnit" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BaseDataMain">
+    <configuration name="GeneratorTest.generatorFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="com-daas-basedata-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.daas.basedata.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.daas.basedata.generator" />
+      <option name="MAIN_CLASS_NAME" value="com.daas.basedata.generator.GeneratorTest" />
+      <option name="METHOD_NAME" value="generatorFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpTest.getDataByType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="com-daas-basedata-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.daas.basedata.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.daas.basedata" />
+      <option name="MAIN_CLASS_NAME" value="com.daas.basedata.HttpTest" />
+      <option name="METHOD_NAME" value="getDataByType" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BaseDataMain" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="com-daas-basedata" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.daas.basedata.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.daas.basedata.BaseDataMain" />
+      <option name="ALTERNATIVE_JRE_PATH" value="D:\work\language_java\jdk1.8.0_191\jre" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GaindataMain" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="com-daas-gaindata" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.daas.gaindata.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.daas.gaindata.GaindataMain" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.HttpTest.getDataByType" />
+      <item itemvalue="JUnit.GeneratorTest.generatorFile" />
+      <item itemvalue="Spring Boot.GaindataMain" />
+      <item itemvalue="Spring Boot.BaseDataMain" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.BaseDataMain" />
+        <item itemvalue="Spring Boot.GaindataMain" />
+        <item itemvalue="JUnit.GeneratorTest.generatorFile" />
+        <item itemvalue="JUnit.HttpTest.getDataByType" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3681105d-075a-47bd-ab42-8275a3eff83f" name="Default Changelist" comment="" />
+      <created>1599572355122</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599572355122</updated>
+      <workItem from="1599572357823" duration="15472000" />
+      <workItem from="1599657303651" duration="16917000" />
+      <workItem from="1599737518316" duration="10088000" />
+      <workItem from="1599834176613" duration="28116000" />
+      <workItem from="1599906640595" duration="28926000" />
+      <workItem from="1599970452283" duration="11724000" />
+      <workItem from="1600091472810" duration="2935000" />
+      <workItem from="1600100355020" duration="8000" />
+      <workItem from="1600100449544" duration="2884000" />
+      <workItem from="1600176791979" duration="5133000" />
+      <workItem from="1600181940975" duration="271000" />
+      <workItem from="1600182221862" duration="147000" />
+      <workItem from="1600182378204" duration="3292000" />
+      <workItem from="1600264882281" duration="12038000" />
+      <workItem from="1600706608642" duration="601000" />
+      <workItem from="1601311550332" duration="7845000" />
+    </task>
+    <task id="LOCAL-00001" summary="delete excle">
+      <created>1600100513116</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600100513116</updated>
+    </task>
+    <task id="LOCAL-00002" summary=".">
+      <created>1600185634244</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600185634244</updated>
+    </task>
+    <task id="LOCAL-00003" summary=".">
+      <created>1600358100092</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1600358100092</updated>
+    </task>
+    <task id="LOCAL-00004" summary="建表sql">
+      <created>1601311973273</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1601311973273</updated>
+    </task>
+    <task id="LOCAL-00005" summary="省市区商圈基础数据初始化">
+      <created>1601312192023</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1601312192023</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="delete excle" />
+    <MESSAGE value="." />
+    <MESSAGE value="建表sql" />
+    <MESSAGE value="省市区商圈基础数据初始化" />
+    <option name="LAST_COMMIT_MESSAGE" value="省市区商圈基础数据初始化" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="444" y="121" key="#Customize_Data_Views" timestamp="1599912002190">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="444" y="121" key="#Customize_Data_Views/0.0.1536.824@0.0.1536.824" timestamp="1599912002190" />
+    <state x="395" y="91" key="#Inspections" timestamp="1599930818711">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="395" y="91" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1599930818711" />
+    <state x="361" y="47" width="814" height="777" key="#Intentions" timestamp="1600182470563">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="47" width="814" height="777" key="#Intentions/0.0.1536.824@0.0.1536.824" timestamp="1600182470563" />
+    <state x="249" y="0" key="#Project_Structure" timestamp="1600010578897">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1600010578897" />
+    <state x="226" y="66" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601311591899">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="226" y="66" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1601311591899" />
+    <state x="480" y="213" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599573863114">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="480" y="213" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1599573863114" />
+    <state x="403" y="99" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1600009277747">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="403" y="99" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1536.824@0.0.1536.824" timestamp="1600009277747" />
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1600351320906">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1600351320906" />
+    <state x="166" y="325" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1599930428667">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="166" y="325" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1599930428667" />
+    <state x="416" y="279" width="880" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1599930416038">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="416" y="279" width="880" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1599930416038" />
+    <state x="416" y="292" width="880" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1599930431736">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="416" y="292" width="880" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1536.824@0.0.1536.824" timestamp="1599930431736" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1600181262657">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1600181262657" />
+    <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1599666026548">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599666026548" />
+    <state x="524" y="114" key="#xdebugger.evaluate" timestamp="1600011131433">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="524" y="114" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1600011131433" />
+    <state width="464" height="456" key="DebuggerActiveHint" timestamp="1600177737675">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="464" height="456" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1600177737675" />
+    <state x="307" y="146" key="FileChooserDialogImpl" timestamp="1600181914334">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="307" y="146" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600181914334" />
+    <state width="1163" height="297" key="GridCell.Tab.0.bottom" timestamp="1601388690568">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="297" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601388690568" />
+    <state width="1163" height="297" key="GridCell.Tab.0.center" timestamp="1601388690568">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="297" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601388690568" />
+    <state width="1163" height="297" key="GridCell.Tab.0.left" timestamp="1601388690568">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="297" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601388690568" />
+    <state width="1163" height="297" key="GridCell.Tab.0.right" timestamp="1601388690568">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="297" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601388690568" />
+    <state width="1163" height="297" key="GridCell.Tab.1.bottom" timestamp="1601388690568">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="297" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601388690568" />
+    <state width="1163" height="297" key="GridCell.Tab.1.center" timestamp="1601388690568">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="297" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601388690568" />
+    <state width="1163" height="297" key="GridCell.Tab.1.left" timestamp="1601388690568">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="297" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601388690568" />
+    <state width="1163" height="297" key="GridCell.Tab.1.right" timestamp="1601388690568">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="297" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601388690568" />
+    <state width="1163" height="371" key="GridCell.Tab.2.bottom" timestamp="1600181929905">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="371" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600181929905" />
+    <state width="1163" height="371" key="GridCell.Tab.2.center" timestamp="1600181929905">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="371" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1600181929905" />
+    <state width="1163" height="371" key="GridCell.Tab.2.left" timestamp="1600181929905">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="371" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1600181929905" />
+    <state width="1163" height="371" key="GridCell.Tab.2.right" timestamp="1600181929905">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="371" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1600181929905" />
+    <state x="270" y="0" key="SettingsEditor" timestamp="1600182166827">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1600182166827" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1600358138660">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600358138660" />
+    <state x="499" y="217" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1601312008633">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="217" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.0.1536.824@0.0.1536.824" timestamp="1601312008633" />
+    <state x="548" y="229" width="439" height="362" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1600355431482">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="229" width="439" height="362" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1536.824@0.0.1536.824" timestamp="1600355431482" />
+    <state x="470" y="148" width="694" height="593" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1600356734362">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="470" y="148" width="694" height="593" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1600356734362" />
+    <state x="285" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1600182654556">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="285" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1600182654556" />
+    <state x="349" y="67" key="editAsTableFormatDialogDimension" timestamp="1599756198768">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="349" y="67" key="editAsTableFormatDialogDimension/0.0.1536.824@0.0.1536.824" timestamp="1599756198768" />
+    <state x="468" y="144" width="847" height="536" key="find.popup" timestamp="1599902169905">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="468" y="144" width="847" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1599902169905" />
+    <state x="465" y="205" width="853" height="425" key="git4idea.merge.GitPullDialog" timestamp="1600350601621">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="205" width="853" height="425" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1600350601621" />
+    <state x="305" y="106" key="new project wizard" timestamp="1599930333447">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="305" y="106" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1599930333447" />
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1600184366608">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1600184366608" />
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup" timestamp="1600353714064">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1600353714064" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo typeName="com.alibaba.fastjson.JSONReader" fieldName="context" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="provinceDtoList" language="JAVA" />
+        <watch expression="cityDtoList" language="JAVA" />
+        <watch expression="returnList.get(0)" />
+        <watch expression="administrativeAreaDto.getProvinceDtoList()" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
