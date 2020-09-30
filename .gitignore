@@ -1,0 +1,12 @@
+.idea
+*.iml
+*.log
+.DS_Store
+target/
+*.log*
+.idea/*
+**/.idea/*
+*/target/*
+*/**/target/*
+*/**/contract/**/**/*.java
+*.git*
