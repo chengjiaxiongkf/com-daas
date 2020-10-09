@@ -1,18 +1,14 @@
 package com.daas.basedata.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.daas.basedata.dto.CityDTO;
 import com.daas.basedata.util.BaseServiceFactory;
 import com.daas.basedata.vo.CityVO;
 import com.daas.commmon.vo.ResultPageVO;
 import com.daas.commmon.vo.ResultVO;
-import com.github.pagehelper.IPage;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
