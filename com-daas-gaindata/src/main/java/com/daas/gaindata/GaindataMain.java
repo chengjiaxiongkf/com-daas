@@ -1,21 +1,7 @@
 package com.daas.gaindata;
 
-import com.daas.gaindata.constant.App;
-import com.daas.gaindata.dto.AreaDto;
-import com.daas.gaindata.dto.BusinessDistrictDto;
-import com.daas.gaindata.dto.CityDto;
-import com.daas.gaindata.dto.ProvinceDto;
-import com.daas.gaindata.mapper.AreaMapper;
-import com.daas.gaindata.mapper.BusinessDistrictMapper;
-import com.daas.gaindata.mapper.CityMapper;
-import com.daas.gaindata.mapper.ProvinceMapper;
-import com.daas.gaindata.util.FileUtils;
-import com.daas.gaindata.util.HttpDataFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.io.FileNotFoundException;
-import java.util.List;
 
 /**
  * @Author chengjiaxiong

@@ -1,8 +1,8 @@
-package com.daas.gaindata.util;
+package com.daas.commmon.util;
 
+import cn.hutool.core.io.FileUtil;
 import com.alibaba.fastjson.JSONReader;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.util.StringUtils;
 
 import java.io.*;
 
@@ -19,7 +19,7 @@ public class FileUtils {
         }else{
             destDirName = "usr/tmp/";
         }
-        File dir = new File(destDirName);
+        File dir = FileUtil.file(destDirName);
         if(dir.exists()){
             return "D://tmp/";
         }
@@ -28,7 +28,7 @@ public class FileUtils {
         }
         //创建目录
         if (!dir.mkdirs()) {
-            log.info("创建目录" + destDirName + "失败！");
+            throw new RuntimeException("FileUtils.java 31 row创建目录失败");
         }
         return "D://tmp/";
     }
@@ -54,11 +54,11 @@ public class FileUtils {
      * @param filePath 文件目录地址
      * @param isAppend 是否拼接写入
      */
-    public static void writeStrToFile(String jsonStr,String filePath,boolean isAppend,String appendMark) throws IOException {
+    public static void writeStrToFile(String jsonStr,String filePath,boolean isAppend,String appendMark) throws IOException,NullPointerException {
         String url = "";
         File file = null;
-        if(StringUtils.isEmpty(jsonStr)){
-            return;
+        if(jsonStr.isEmpty()){
+            throw new NullPointerException("jsonStr is null");
         }
         try {
             url = FileUtils.systemTempDir()+filePath;
