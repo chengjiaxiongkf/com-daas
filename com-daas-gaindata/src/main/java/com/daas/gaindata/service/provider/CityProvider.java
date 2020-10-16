@@ -1,21 +1,24 @@
-package com.daas.gaindata.service.impl;
+package com.daas.gaindata.service.provider;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONReader;
-import com.daas.gaindata.dto.AreaDto;
+import com.daas.gaindata.dto.CityDto;
+import com.daas.gaindata.service.biz.AbstractHttpDataParent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @Author chengjiaxiong
- * @Date 2020/9/12 16:47
+ * @Date 2020/9/12 0:59
  */
 @Service
 @Slf4j
-public class AreaProvider extends AbstractHttpDataParent {
+public class CityProvider extends AbstractHttpDataParent {
+
     private String dupCode(String key,JSONReader jsonReader){
         String upCode = "";
         if ("area_code".equals(key)) {
@@ -28,9 +31,9 @@ public class AreaProvider extends AbstractHttpDataParent {
 
     @Override
     public Object analysisData(JSONReader jsonReader) {
-        List<AreaDto> list = new ArrayList<>();
+        List<CityDto> list = new ArrayList<>();
         try {
-            AreaDto areaDto;
+            CityDto cityPojo;
             jsonReader.startObject();
             while (jsonReader.hasNext()){
                 String key = jsonReader.readString();
@@ -49,32 +52,20 @@ public class AreaProvider extends AbstractHttpDataParent {
                         if("sub".equals(key)){
                             jsonReader.startArray();
                             while (jsonReader.hasNext()){
+                                String upCode = null;
                                 jsonReader.startObject();
                                 while (jsonReader.hasNext()){
                                     key = jsonReader.readString();
-                                    this.dupCode(key,jsonReader);
+                                    String str = this.dupCode(key,jsonReader);
+                                    if(StringUtils.isEmpty(upCode)) {
+                                        upCode = str;
+                                    }
                                     if("sub".equals(key)){
                                         jsonReader.startArray();
                                         while (jsonReader.hasNext()){
-                                            String upCode = null;
-                                            jsonReader.startObject();
-                                            while (jsonReader.hasNext()){
-                                                key = jsonReader.readString();
-                                                String str = this.dupCode(key,jsonReader);
-                                                if(StringUtils.isEmpty(upCode)){
-                                                    upCode = str;
-                                                }
-                                                if("sub".equals(key)){
-                                                    jsonReader.startArray();
-                                                    while (jsonReader.hasNext()){
-                                                        areaDto = JSONObject.toJavaObject((JSONObject)jsonReader.readObject(), AreaDto.class);
-                                                        areaDto.setCityCode(upCode);
-                                                        list.add(areaDto);
-                                                    }
-                                                    jsonReader.endArray();
-                                                }
-                                            }
-                                            jsonReader.endObject();
+                                            cityPojo = JSONObject.toJavaObject((JSONObject)jsonReader.readObject(), CityDto.class);
+                                            cityPojo.setProvinceCode(upCode);
+                                            list.add(cityPojo);
                                         }
                                         jsonReader.endArray();
                                     }

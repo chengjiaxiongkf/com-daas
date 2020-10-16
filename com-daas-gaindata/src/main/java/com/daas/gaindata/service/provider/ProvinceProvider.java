@@ -1,8 +1,9 @@
-package com.daas.gaindata.service.impl;
+package com.daas.gaindata.service.provider;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONReader;
 import com.daas.gaindata.dto.ProvinceDto;
+import com.daas.gaindata.service.biz.AbstractHttpDataParent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

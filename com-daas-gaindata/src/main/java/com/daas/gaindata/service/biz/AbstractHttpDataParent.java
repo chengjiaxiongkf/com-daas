@@ -1,4 +1,4 @@
-package com.daas.gaindata.service.impl;
+package com.daas.gaindata.service.biz;
 
 import com.alibaba.fastjson.JSONReader;
 import com.daas.commmon.vo.ResultVO;

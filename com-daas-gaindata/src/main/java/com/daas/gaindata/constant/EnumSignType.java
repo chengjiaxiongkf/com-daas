@@ -1,5 +1,6 @@
 package com.daas.gaindata.constant;
 
+import com.daas.gaindata.service.impl.SignServiceImpl;
 import lombok.Getter;
 
 /**
