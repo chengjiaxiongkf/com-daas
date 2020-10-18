@@ -19,14 +19,14 @@ public class BaseDTO {
     /**
      * 创建人
      */
-    private Long createBy;
-    private String createByName;
-    private LocalDateTime createDate = LocalDateTime.now();
+    private Long createdBy;
+    private String createdByName;
+    private LocalDateTime createdDate = LocalDateTime.now();
 
     /**
      * 最后更新人信息
      */
-    private Long updateBy;
-    private String updateByName;
-    private LocalDateTime updateDate = LocalDateTime.now();
+    private Long updatedBy;
+    private String updatedByName;
+    private LocalDateTime updatedDate = LocalDateTime.now();
 }

@@ -1,4 +1,6 @@
-package com.daas.commmon.exception;
+package com.daas.common.lib.exception;
+
+import com.daas.commmon.exception.AppException;
 
 /**
  * @author v_jxjxcheng

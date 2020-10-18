@@ -3,8 +3,8 @@ spring:
   #druid jdbc池
   datasource:
     username: root
-    password: 960827
-    url: jdbc:mysql://localhost:3306/base?useSSL=false&useUnicode=true&serverTimezone=GMT%2B8&zeroDateTimeBehavior=CONVERT_TO_NULL
+    password: cjxwd86496048
+    url: jdbc:mysql://47.95.221.169:3306/base
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     #   数据源其他配置

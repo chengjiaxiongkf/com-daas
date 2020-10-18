@@ -1,4 +1,4 @@
-package com.daas.commmon.util;
+package com.daas.common.lib.util;
 
 import cn.hutool.core.io.FileUtil;
 import com.alibaba.fastjson.JSONReader;

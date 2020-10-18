@@ -15,6 +15,12 @@ public class ResultPageVO<T> extends ResultVO<T> {
     public ResultPageVO(){
         super();
     }
+    public ResultPageVO(T t,long total){
+        this.data = t;
+        this.total = total;
+    }
     private long total;
     private T data;
+    private int startSize;
+    private int endSize;
 }

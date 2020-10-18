@@ -1,6 +1,6 @@
 package com.daas.basedata.service.impl;
 
-import com.daas.basedata.constant.BeanMapper;
+import com.daas.basedata.util.BeanMapper;
 import com.daas.basedata.dto.ProvinceDTO;
 import com.daas.basedata.mapper.ProvinceMapper;
 import com.daas.basedata.service.ProvinceService;

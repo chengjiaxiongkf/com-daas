@@ -1,6 +1,6 @@
 package com.daas.basedata.controller;
 
-import com.daas.basedata.util.BaseServiceFactory;
+import com.daas.basedata.factory.BaseServiceFactory;
 import com.daas.basedata.vo.ProvinceVO;
 import com.daas.commmon.vo.ResultPageVO;
 import com.daas.commmon.vo.ResultVO;

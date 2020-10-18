@@ -30,6 +30,7 @@ public class App implements ApplicationContextAware {
 
     public static ApplicationContext applicationContext;
 
+    @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         App.applicationContext = applicationContext;
     }

@@ -1,4 +1,4 @@
-package com.daas.basedata.util;
+package com.daas.basedata.factory;
 
 import com.daas.basedata.constant.App;
 import com.daas.basedata.service.AreaService;

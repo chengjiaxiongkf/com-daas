@@ -1,4 +1,6 @@
-package com.daas.commmon.exception;
+package com.daas.common.lib.exception;
+
+import com.daas.commmon.exception.AppException;
 
 /**
  * 导出类型找不到

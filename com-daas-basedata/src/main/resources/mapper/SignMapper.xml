@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.daas.basedata.mapper.SignMapper">
+  <sql id="sign_column" >
+       dbu.user_name userName,
+       dbs.sign_date signDate,
+       dbs.user_level userLevel,
+       dbs.remark remark
+  </sql>
+  <sql id="sign_where">
+    <where>
+      dbs.user_id = dbu.id
+      <if test="userName!=null and userName!=''">
+        and dbu.user_name = #{userName,jdbcType=VARCHAR}
+      </if>
+      <if test="signDateStart!=null and signDateStart!=''">
+        and dbs.sign_date > #{signDateStart,jdbcType=TIMESTAMP}
+      </if>
+      <if test="signDateStart!=null and signDateStart!=''">
+        and dbs.sign_date <![CDATA[<=]]> #{signDateStart,jdbcType=TIMESTAMP}
+      </if>
+      <if test="userLevel!=null and userLevel!=''">
+        and dbs.user_level = #{userLevel,jdbcType=INTEGER}
+      </if>
+    </where>
+  </sql>
+  <select id="getSignTotal" resultType="int" parameterType="com.daas.basedata.vo.SignChunHuiVO">
+    select count(*)
+    from daas_biz_sign dbs,
+    daas_base_user dbu
+    <include refid="sign_where"/>
+  </select>
+  <select id="getSignList" resultType="com.daas.basedata.vo.SignChunHuiVO" parameterType="com.daas.basedata.vo.SignChunHuiVO">
+    select 
+    <include refid="sign_column"/>
+    from daas_biz_sign dbs,
+    daas_base_user dbu
+    <include refid="sign_where"/>
+    limit #{startSize},#{endSize}
+  </select>
+</mapper>

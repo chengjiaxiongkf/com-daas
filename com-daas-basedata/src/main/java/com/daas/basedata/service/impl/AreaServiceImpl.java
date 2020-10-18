@@ -2,16 +2,13 @@ package com.daas.basedata.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.daas.basedata.constant.BeanMapper;
-import com.daas.basedata.dto.AreaDTO;
+import com.daas.basedata.util.BeanMapper;
 import com.daas.basedata.mapper.AreaMapper;
 import com.daas.basedata.service.AreaService;
 import com.daas.basedata.vo.AreaVO;
-import com.daas.basedata.vo.CityVO;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * @Author chengjiaxiong

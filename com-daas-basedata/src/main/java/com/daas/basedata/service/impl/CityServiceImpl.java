@@ -2,7 +2,7 @@ package com.daas.basedata.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.daas.basedata.constant.BeanMapper;
+import com.daas.basedata.util.BeanMapper;
 import com.daas.basedata.mapper.CityMapper;
 import com.daas.basedata.service.CityService;
 import com.daas.basedata.vo.CityVO;

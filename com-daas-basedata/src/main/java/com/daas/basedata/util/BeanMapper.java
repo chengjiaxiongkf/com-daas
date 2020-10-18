@@ -1,4 +1,4 @@
-package com.daas.basedata.constant;
+package com.daas.basedata.util;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;

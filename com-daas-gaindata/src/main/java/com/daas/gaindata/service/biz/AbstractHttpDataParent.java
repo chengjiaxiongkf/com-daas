@@ -2,8 +2,8 @@ package com.daas.gaindata.service.biz;
 
 import com.alibaba.fastjson.JSONReader;
 import com.daas.commmon.vo.ResultVO;
+import com.daas.common.lib.util.FileUtils;
 import com.daas.gaindata.service.HttpDataHandle;
-import com.daas.commmon.util.FileUtils;
 import com.daas.gaindata.util.HttpRequestUtils;
 
 import java.io.*;

@@ -2,7 +2,7 @@ package com.daas.basedata.controller;
 
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.daas.basedata.util.BaseServiceFactory;
+import com.daas.basedata.factory.BaseServiceFactory;
 import com.daas.basedata.vo.AreaVO;
 import com.daas.commmon.vo.ResultPageVO;
 import com.daas.commmon.vo.ResultVO;
