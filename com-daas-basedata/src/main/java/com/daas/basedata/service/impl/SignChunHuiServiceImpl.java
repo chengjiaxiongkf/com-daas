@@ -28,6 +28,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.List;
@@ -48,13 +49,13 @@ public class SignChunHuiServiceImpl implements SignChunHuiService {
 
     @Override
     @Transactional
-    public ResultVO importData(MultipartFile file) throws RuntimeException {
+    public ResultVO importData(MultipartFile file) throws RuntimeException, IOException {
         StringBuilder msg = new StringBuilder();
         int successCount=0;
-//        InputStream inputStream=file.getInputStream();
-        InputStream inputStream= FileUtil.getInputStream(new File("d:/123.xlsx"));
+        InputStream inputStream=file.getInputStream();
+//        InputStream inputStream= FileUtil.getInputStream(new File("d:/123.xlsx"));
         String[] excelHead={"序号","备注","提交时间","您的真实姓名","今日心情指数","“一句话”心情"};
-        String[] excelHeadAlias={"no","remark","signDate","name","moodLevel","moodMsg"};
+        String[] excelHeadAlias={"no","remark","signDate","userName","moodLevel","moodMsg"};
         List<SignChunHuiExcelVO> result= ExcelUtils.importExcel(inputStream,excelHead,excelHeadAlias, SignChunHuiExcelVO.class);
         result.stream().forEach(signChunHuiExcelVO -> {
             UserDTO userDTO = this.userExistProcess(signChunHuiExcelVO);
@@ -85,7 +86,7 @@ public class SignChunHuiServiceImpl implements SignChunHuiService {
 
     private UserDTO userExistProcess(SignChunHuiExcelVO signChunHuiExcelVO){
         QueryWrapper<UserDTO> wrapper = Wrappers.query();
-        wrapper.eq("name",signChunHuiExcelVO.getUserName());
+        wrapper.eq("user_name",signChunHuiExcelVO.getUserName());
         UserDTO userDTO = userMapper.selectOne(wrapper);
         if(userDTO==null){//用户不存在，则新增
             userDTO = new UserDTO();

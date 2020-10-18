@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
@@ -39,7 +40,9 @@ public class SignChunHuiController {
     }
 
     @RequestMapping("/getSignListByPage")
-    public ResultPageVO getSignListByPage(SignChunHuiVO signChunHuiVO, HttpServletRequest request, HttpServletResponse response) throws Exception{
+    public ResultPageVO getSignListByPage(@RequestParam("page")int page,@RequestParam("limit")int limmit,SignChunHuiVO signChunHuiVO, HttpServletRequest request, HttpServletResponse response) throws Exception{
+        signChunHuiVO.setStartSize((page-1)*limmit);
+        signChunHuiVO.setEndSize((page)*limmit);
         return signChunHuiService.getListByPage(signChunHuiVO);
     }
 }
